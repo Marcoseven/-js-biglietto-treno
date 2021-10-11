@@ -2,12 +2,25 @@
 
 // variabili const
 const distance = prompt("Quanti km vuole percorrere?");
-const age = prompt("Quanti anni hai?");
-const result = distance * 0.21;
+const userAge = prompt("Quanti anni hai?");
+const result = distance * "0.21";
 
 // risposte visionate su console
-console.log("Numero utente:", distance + " km");
-console.log("Numero utente:", age + " anni");
-console.log("Prezzo:", result + " €");
+console.log("Km che vuole percorrere l'utente:", distance + " km");
+console.log("Età dell'utente:", userAge + " anni");
+console.log("Prezzo biglietto standard:", result + " €");
 
-
+// calcoli sconti
+if (userAge < 18) {
+	var discount_first = 0.21 - (0.21 / 100) * 20;
+	console.log(
+		"Prezzo biglietto scontato per i minorenni: ",
+		discount_first.toFixed(2) + " €"
+	);
+} else if (userAge >= 65) {
+	var discount_second = 0.21 - (0.21 / 100) * 40;
+	console.log(
+		"Prezzo biglietto scontato per gli over 65 anni: ",
+		discount_second.toFixed(2) + " €"
+	);
+}
